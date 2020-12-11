@@ -1,6 +1,3 @@
-from numpy.random import seed
-from numpy.random import randn
-from matplotlib import pyplot
 import numpy as np
 import pylab
 import scipy.stats as stats
@@ -17,7 +14,6 @@ data = [27.8172, 27.7765, 27.7910, 27.7664, 27.7854, 27.8003, 27.8074, 27.8048, 
 
 stats.probplot(data, dist="norm", plot=pylab)
 pylab.show()
-
 
 print (data)
 
