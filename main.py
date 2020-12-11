@@ -12,7 +12,10 @@ def make_arr():
     return data
 
 
-
-print(stats.kstest(make_arr(),'norm'))
+print(stats.kstest(make_arr(), 'norm'))
 plt.hist(make_arr())
 plt.show()
+
+stats.probplot(make_arr(), dist="norm", plot=pylab)
+pylab.show()
+
