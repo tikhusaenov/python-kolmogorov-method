@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import pylab
+import statistics as st
 import scipy.stats as stats
-from scipy.stats import norm
 
 
 def make_arr():
@@ -13,22 +12,38 @@ def make_arr():
     return data
 
 
+dt = sorted(make_arr())
+data_scale = np.std(dt)
+kol = len(dt)
+avg = np.mean(dt)
+x = sorted(np.random.normal(loc=avg, scale=data_scale, size=kol))
+print(x)
+print(dt)
 
 
-data = make_arr()
-def ecdf():
-    x = np.sort(data)
-    n = x.size
-    y = np.arange(1, n+1) / n
-    return x, y
+[statistic, pvalue] = stats.kstest(dt, x, alternative='less')
+
+print(pvalue)
 
 
-print(ecdf())
+# if(pvalue >= 0.05 and pvalue <= 0.2):
+#     print('normal')
+# else:
+#     print('not normal')
 
 
 
-# print(stats.kstest(data_array, 'norm',))
-# stats.probplot(data_array, dist="norm", plot=pylab)
-# pylab.show()
-
-
+# plt.hist(x, 20, density=True)
+# plt.xlabel('Величина')
+# plt.ylabel('Кол-во измерений')
+# plt.title('Нормальное распределение')
+# plt.grid()
+# plt.show()
+#
+#
+# plt.hist(dt, 20, density=True)
+# plt.xlabel('Величина')
+# plt.ylabel('Кол-во измерений')
+# plt.title('Гистограмма эмперических данных')
+# plt.grid()
+# plt.show()
