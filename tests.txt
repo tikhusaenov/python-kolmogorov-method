@@ -1,0 +1,20 @@
+Statistics if closer to zero => better
+KOLMOGOROV: p > 0,2(?) => not denied
+SHAPIRO: p > 0,05 => not denied
+
+
+a:
+KstestResult(statistic=0.22058823529411764, pvalue=0.07292929252352577)=> denied
+ShapiroResult(statistic=0.9389514923095703, pvalue=0.0023789883125573397) => denied
+
+
+
+b:
+KstestResult(statistic=0.10526315789473684, pvalue=0.6712813718081443) => not denied
+ShapiroResult(statistic=0.9568438529968262, pvalue=0.003300740849226713) => denied
+
+
+c:
+KstestResult(statistic=0.13793103448275862, pvalue=0.38121493267456624) => not denied
+ShapiroResult(statistic=0.9916939735412598, pvalue=0.8610210418701172) => not denied
+
